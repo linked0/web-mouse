@@ -16,7 +16,7 @@ def handler(event, context):
     
     response = {
         "statusCode": 200,
-        "body": "Hello from Lambda!"
+        "body": "Hello from Lambda! version 2.0 Wed Jul 16 11:15:25 KST 2025",
     }
     
     return response
