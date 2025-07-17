@@ -49,10 +49,11 @@ function App() {
   const allBasic = new AllBasic(jsonRpcProvider, ALL_BASIC_CONTRACT)
   console.log('AllBasic Contract: ', allBasic)
   let curAllBasicValue: number = 0;
-  allBasic.getValue().then((value) => {
-    curAllBasicValue = Number(value)
-    console.log('allBasicValue:', curAllBasicValue);
-  });
+  // TODO: Later we can use this to get the value from the contract
+  // allBasic.getValue().then((value) => {
+  //   curAllBasicValue = Number(value)
+  //   console.log('allBasicValue:', curAllBasicValue);
+  // });
 
   function handleAddGoal(goal: string, summary: string) {
     setGoals((prevGoals) => {

@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Create Frontend .env file
+        run: |
+          echo "VITE_ALL_BASIC_CONTRACT=${{ secrets.VITE_ALL_BASIC_CONTRACT }}" >> frontend/.env
+
       - name: Install dependencies
         run: npm ci
 
