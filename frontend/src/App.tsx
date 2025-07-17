@@ -6,12 +6,13 @@ import goalsImg from './assets/goals.jpg'
 import NewGoal from './components/NewGoal'
 import ContractConnect from './components/ContractConnect'
 import { AllBasic } from 'rabbit-contract-js'
-import { JsonRpcProvider } from "ethers/providers";
-import { useEthers } from "@usedapp/core";
 import { ethers } from "ethers";
 import Input from './components/Input'
-const { ethereum } = window;
 
+interface EthereumWindow extends Window {
+  ethereum?: any;
+}
+const { ethereum } = window as EthereumWindow;
 export const ALL_BASIC_CONTRACT = import.meta.env.VITE_ALL_BASIC_CONTRACT
 
 export type CourseGoal = {
