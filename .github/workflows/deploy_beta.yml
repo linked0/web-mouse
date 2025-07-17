@@ -21,6 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build Frontend
+        run: |
+          cd frontend
+          yarn install
+          yarn build
+          cd ..
+
       - name: Deploy CDK stack
         working-directory: ./
         run: npx cdk deploy --require-approval never
