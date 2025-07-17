@@ -42,6 +42,13 @@ export class WebMouseStack extends cdk.Stack {
       websiteIndexDocument: 'index.html',
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
+      // Add this block to explicitly allow public access
+      blockPublicAccess: new s3.BlockPublicAccess({
+        blockPublicAcls: false,
+        blockPublicPolicy: false,
+        ignorePublicAcls: false,
+        restrictPublicBuckets: false,
+      }),
     });
 
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
